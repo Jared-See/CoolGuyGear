@@ -1,34 +1,85 @@
-<h2>Sign up</h2>
+<center>
+  <div class = "jumbotron-main">
+    <center>
+      <h2>Sign Up</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.label :username %><br />
+              <%= f.text_field :username %>
+          </div>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+          <div class="jumbotron-inner">
+            <div class="actions">
+              <%= f.submit "Sign up" %>
+            </div>
+          <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
+    </center>
   </div>
+</center>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<style>
+  .jumbotron-main{
+    background-color: #4F4F4F;
+    width: 400px;
+    color: black;
+  }
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  .jumbotron-inner{
+    background-color: #EB5757;
+    width: 400px;
+    color: black;
+    position: relative;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  #user_username{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+  #user_email{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+  #user_password{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
 
-<%= render "devise/shared/links" %>
+  #user_password_confirmation{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+</style>
