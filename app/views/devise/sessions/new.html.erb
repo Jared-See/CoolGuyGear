@@ -1,31 +1,86 @@
-<h2>Log in</h2>
+<center>
+  <div class = "jumbotron-main">
+    <center>
+      <h2>Log In</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+        <div class="jumbotron jumbotron-bg-danger">
+          <div class="actions">
+            <%= f.submit "Log in" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </center>
   </div>
+</center>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<style>
+  h2{
+    margin-top: 4%;
+    padding-top: 12px;
+  }
+  .jumbotron-main{
+    background-color: #4F4F4F;
+    width: 600px;
+    color: black;
+    height: 800px !important;
+  }
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  .jumbotron{
+    margin-top: 25%;
+    background-color: #EB5757;
+    width: 400px;
+    color: black;
+    position: relative;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 0px !important;
+  }
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+  #user_username{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+  #user_email{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-bottom: 20px;
+}
+  #user_password{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
 
-<%= render "devise/shared/links" %>
+  #user_password_confirmation{
+  background-color: #999999;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+</style>
