@@ -28,7 +28,7 @@
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
 
-          <div class="jumbotron-inner">
+          <div class="jumbotron jumbotron-bg-danger">
             <div class="actions">
               <%= f.submit "Sign up" %>
             </div>
@@ -46,7 +46,7 @@
     color: black;
   }
 
-  .jumbotron-inner{
+  .jumbotron{
     background-color: #EB5757;
     width: 400px;
     color: black;
@@ -54,6 +54,7 @@
     padding-top: 5px;
     padding-left: 25px;
     padding-right: 25px;
+    border-radius: 0px !important;
   }
 
   #user_username{

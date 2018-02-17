@@ -1,2 +1,36 @@
 <ul>
-  <li><a><%= link_to'About', home_about_path %></a></li>
+	<% if user_signed_in? %>
+			<li class="top-header-li"><a class="top-header-li-a"><%= link_to'Log Out', destroy_user_session_path, method: :delete %></a></li>
+			<li class="top-header-li"><a class="top-header-li-a"><%= link_to'Edit Profile', edit_user_registration_path %></a></li>
+			<li class="top-header-li"><a class="top-header-li-a"><%= link_to'Sell', new_post_path %></a></li>
+		<% else %>
+			<li class="top-header-li"><a class="top-header-li-a"><%= link_to'Log In', user_session_path %></a></li>
+			<li class="top-header-li"><a class="top-header-li-a"><%= link_to'Sign Up', new_user_registration_path %></a></li>
+		<% end %>
+</ul>
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4F4F4F;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding-right: 12px;
+}
+
+li a:hover {
+    color: #111;
+}
+</style>
