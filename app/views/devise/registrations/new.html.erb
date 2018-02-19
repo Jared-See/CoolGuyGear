@@ -1,7 +1,7 @@
 <center>
   <div class = "jumbotron-main">
     <center>
-      <h2>Sign Up</h2>
+      <h2 class="sign">Sign Up</h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
@@ -29,8 +29,10 @@
           </div>
 
           <div class="jumbotron jumbotron-bg-danger">
-            <div class="actions">
-              <%= f.submit "Sign up" %>
+            <div class="sign_up">
+              <div class="actions">
+                <%= f.submit "Sign up" %>
+              </div>
             </div>
           <% end %>
           <%= render "devise/shared/links" %>
@@ -40,20 +42,25 @@
 </center>
 
 <style>
+  .actions{
+    background-color: #C4C4C4 !important;
+
+}
+
   .jumbotron-main{
     background-color: #4F4F4F;
-    width: 400px;
+    width: 60%;
     color: black;
+    padding-bottom: 10px;
   }
 
   .jumbotron{
     background-color: #EB5757;
     width: 400px;
     color: black;
-    position: relative;
-    padding-top: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
     border-radius: 0px !important;
   }
 
@@ -82,5 +89,9 @@
   border-style: solid;
   border-width: 1px;
   border-color: black;
+}
+
+.sign{
+  padding-top: 5%;
 }
 </style>
