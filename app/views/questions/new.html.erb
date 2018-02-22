@@ -1,5 +1,21 @@
-<h1>New Question</h1>
+<center>
+    <div class="jumbotron-main">
+      <h1 class="nq">New Question</h1>
 
-<%= render 'form', question: @question %>
+      <%= render 'form', question: @question %>
 
-<%= link_to 'Back', questions_path %>
+      <%= link_to 'Back', questions_path %>
+    </div>
+</center>
+
+<style>
+    .jumbotron-main{
+        margin-top: 5%;
+        background-color: #4F4F4F;
+        color: black;
+    }
+
+    .nq{
+        padding-top: 1%;
+    }
+</style>
