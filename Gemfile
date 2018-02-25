@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt', platforms: :ruby
 
+#PaperClip for uploading images
+gem 'paperclip', '~> 5.2', '>= 5.2.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

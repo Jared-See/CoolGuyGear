@@ -4,12 +4,12 @@
       <h2>Log In</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
+        <div class="field" "box">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
-        <div class="field">
+        <div class="field" "box">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
@@ -37,6 +37,7 @@
     margin-top: 4%;
     padding-top: 12px;
   }
+
   .jumbotron-main{
     margin-top: 5%;
     background-color: #4F4F4F;
