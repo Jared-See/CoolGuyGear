@@ -9,6 +9,7 @@
       <th>Name</th>
       <th>Price</th>
       <th>User</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= post.name %></td>
         <td><%= post.price %></td>
         <td><%= post.user.username %></td>
+        <td><%= image_tag post.image.url(:medium)%></td>
         <td><%= link_to 'Show', post %></td>
         <% if post.user == current_user %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
