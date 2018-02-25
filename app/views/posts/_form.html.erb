@@ -1,5 +1,5 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
+<%= form_for @post, html:{multipart: true} do|f| %>
+<% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
@@ -11,23 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :post_description %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, id: :post_description %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :post_name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :post_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, id: :post_price%>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, id: :post_price%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class:"form-control"%>
   </div>
 
   <div class="actions">
-    <%= form.submit :class => 'btn btn-danger' %>
+    <%= f.submit :class => 'btn btn-danger' %>
   </div>
 <% end %>
 
